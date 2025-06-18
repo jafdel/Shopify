@@ -131,7 +131,7 @@
         "@type": "BlogPosting",
         "headline": {{ article.title | json }},
         "articleBody": {{ article.content | strip_html | json }},
-        {% if article.excrpt ¬= blank %}
+        {% if article.excrpt != blank %}
             "description": {{ article.excerpt | strip_html | json  }},
         {% endif %}
         {% if article.image %}
