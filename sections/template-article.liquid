@@ -125,7 +125,7 @@
     </div>
 {% endif %}
 
-<script>
+<script type="application/ld+json">
     {
         "@context": "http://scherma.org",
         "@type": "BlogPosting",
@@ -136,9 +136,19 @@
         {% endif %}
         {% if article.image %}
             "image": [
-                {{ article.image | image_url: "medium" | prepend: 'https:' | json }}
+                {{ article.image | image_url: "medium" | prepend: 'https:' | json }},
             ]
         {% endif %}
+        "datePublished": {{ article.published_at | date: format: "default" }},
+        "dateCreated": {{ article.created_at | date: format: "default" | json }},
+        "author": {
+            "@type": "Person",
+            "name": {{ article.authorn | json }}
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": {{ shop.name | json }}
+        }
     }
 </script>
 
