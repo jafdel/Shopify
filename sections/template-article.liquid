@@ -136,7 +136,7 @@
         {% endif %}
         {% if article.image %}
             "image": [
-                {{ article.image | img_url: "medium" n| prepend: 'https:' | json }}
+                {{ article.image | img_url: "medium" | prepend: 'https:' | json }}
             ]
         {% endif %}
     }
