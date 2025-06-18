@@ -125,6 +125,23 @@
     </div>
 {% endif %}
 
+<script>
+    {
+        "@context": "http://scherma.org",
+        "@type": "BlogPosting",
+        "headline": {{ article.title | json }},
+        "articleBody": {{ article.content | strip_html | json }},
+        {% if article.excrpt ¬= blank %}
+            "description": {{ article.excerpt | strip_html | json  }},
+        {% endif %}
+        {% if article.image %}
+            "image": [
+                {{ article.image | img_url: "medium" n| prepend: 'https:' | json }}
+            ]
+        {% endif %}
+    }
+</script>
+
 {% schema %}
 {
     "name": "Template Article",
