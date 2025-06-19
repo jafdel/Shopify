@@ -27,10 +27,10 @@
         {% when "featured_image" %}
             <div itemprop="image" class="max-w-7xl bg-blue-100 rounder-lg mx-2 md:mx-auto overflow-hidden my-4">
                 {% if article.image != blank %}
-                    <img height="" width="" class="w-full h-80 md:h-96 object-cover object-center" src="{{ article.image | img_url:'medium' }}" loading="lazy" alt="{{ article.image.alt }}">
+                    <img height="" width="" class="w-full h-80 md:h-96 object-cover object-center" src="{{ article.image | img_url: 'medium' }}" loading="lazy" alt="{{ article.image.alt }}">
                 {% else %}
                     {% assign placeholder_image = 'lifestyle-2' %}
-                    {{ placeholder_image | placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-cventer p-5' }}
+                    {{ placeholder_image | placeholder_svg_tag: 'w-full h-80 md:h-96 object-cover object-center p-5' }}
                 {% endif %}
             </div>
         {% when "article_content" %}
@@ -57,9 +57,9 @@
                         </div>
                     {% endfor %}
 
-                    {% if paginate.pages > 1 %}
-                        {{ paginate | default_pagination }}
-                    {% endif %}
+                   <div class="max-w-6xl mx-auto">
+                    {{ %render "pagination", pagination: paginate %}}
+                   </div>
                 {% endpaginate %}
             </div>
         {% else %}
@@ -198,3 +198,4 @@
     ]
 }
 {% endschema %}
+
