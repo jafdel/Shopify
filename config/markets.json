@@ -8,21 +8,5 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "template": {
-      "type": "template-page",
-      "settings": {}
-    },
-    "contact_form_kgNW6a": {
-      "type": "contact-form",
-      "name": "Contact Form",
-      "settings": {
-        "title": ""
-      }
-    }
-  },
-  "order": [
-    "template",
-    "contact_form_kgNW6a"
-  ]
+  "markets": {}
 }
