@@ -8,8 +8,13 @@
  * ------------------------------------------------------------
  */
 {
-  "current": {},
-  "presets": {
-    "Default": {}
-  }
+  "sections": {
+    "template": {
+      "type": "template-customer-login",
+      "settings": {}
+    }
+  },
+  "order": [
+    "template"
+  ]
 }
